@@ -53,6 +53,9 @@ header .header-content-logo {
     grid-area: header-content-logo;
     width: 50px;
 }
+.header-content-logo:hover {
+    animation: logo-keyframe 4s linear;
+}
 header a.header-content-1 {
     grid-area: header-content-1;
 }
@@ -87,7 +90,9 @@ header .header-image p {
     margin: 0;
     font-size: x-large;
 }
-
+.header-image p:hover {
+    animation: text-keyframe 2s ease;
+}
 section {
     background: #cacaca;
     display: grid;
@@ -230,3 +235,16 @@ footer p {
             "header-image header-image header-image header-image header-image header-image header-image";
     }
 } 
+
+@keyframes logo-keyframe {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes text-keyframe {
+    0% { transform: scale(1); }
+    25% { transform: scale(0.5); }
+    75% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
