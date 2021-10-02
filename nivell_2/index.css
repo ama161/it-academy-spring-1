@@ -1,0 +1,194 @@
+body {
+    max-width:1200px;
+    margin: auto;
+    color: gray;
+}
+main {
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+        "header"
+        "section"
+        "footer";
+}
+
+i {
+    margin-right: 5px;
+}
+
+a {
+    cursor: pointer;
+}
+a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+header {
+    padding-top: 30px;
+    background-position: center;
+    background-image: url('images/header.jpg');
+    display: grid;
+    gap: 10px;
+    grid-area: header;
+    justify-items: center;
+    /* align-self: center; */
+    grid-template-areas: 
+        "header-content-logo"
+        "header-content-1"
+        "header-content-2"
+        "header-content-3"
+        "header-content-4"
+        "header-content-5"
+        "header-content-6"
+        "header-image";
+}
+
+header a {
+    align-self: center;
+}
+
+header .header-content-logo {
+    grid-area: header-content-logo;
+    width: 50px;
+}
+header a.header-content-1 {
+    grid-area: header-content-1;
+}
+header a.header-content-2 {
+    grid-area: header-content-2;
+}
+header a.header-content-3 {
+    grid-area: header-content-3;
+}
+header a.header-content-4 {
+    grid-area: header-content-4;
+}
+header a.header-content-5 {
+    grid-area: header-content-5;
+}
+header a.header-content-6 {
+    grid-area: header-content-6;
+}
+header .header-image {
+    grid-area: header-image;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+header .header-image p {
+    background: #cacaca;
+    color: orangered;
+    opacity: 0.7;
+    padding: 3rem 10rem 6rem 10rem;
+    margin: 0;
+    font-size: x-large;
+}
+
+section {
+    display: grid;
+    grid-area: section;
+    grid-template-areas: 
+    "article"
+    "aside";
+}
+
+article {
+    display: grid;
+    gap: 10px;
+    border: 3px solid black;
+    background-color: blue;
+    grid-area: article;
+    grid-template-areas: 
+        "article-content-1"
+        "article-content-2"
+        "article-content-3"
+        "article-content-4"
+        "article-content-5";
+} 
+
+article span {
+    background-color: cadetblue;
+}
+article span.article-content-1 {
+    grid-area: article-content-1;
+}
+article span.article-content-2 {
+    grid-area: article-content-2;
+}
+article span.article-content-3 {
+    grid-area: article-content-3;
+}
+article span.article-content-4 {
+    grid-area: article-content-4;
+}
+article span.article-content-5 {
+    grid-area: article-content-5;
+}
+
+aside {
+    display: grid;
+    border: 3px solid black;
+    background-color: red;
+    grid-area: aside;
+    grid-template-areas: 
+    "aside-content-1"
+    "aside-content-2"
+    "."
+}
+
+aside span {
+    background-color: yellow;
+}
+aside span.aside-content-1 {
+    grid-area: aside-content-1;
+}
+aside span.aside-content-2 {
+    grid-area: aside-content-2;
+}
+
+footer {
+    border: 3px solid black;
+    background-color: yellow;
+    grid-area: footer;
+}
+
+@media (max-width: 768px) and (min-width: 500px) {
+    header {
+        grid-template-areas: 
+            "header-content-logo header-content-1 header-content-2 header-content-3 header-content-4 header-content-5 header-content-6"
+            "header-image header-image header-image header-image header-image header-image header-image";
+    }
+    section {
+        grid-template-areas: 
+            "article"
+            "aside";
+    }
+    article {
+        grid-template-areas: 
+            "article-content-1 article-content-2"
+            "article-content-3 article-content-4"
+            "article-content-5 article-content-5";
+    }
+}
+
+@media (min-width: 768px) {
+    header {
+        grid-template-areas: 
+            "header-content-logo header-content-1 header-content-2 header-content-3 header-content-4 header-content-5 header-content-6"
+            "header-image header-image header-image header-image header-image header-image header-image";
+    }
+
+    section {
+        grid-template-areas: 
+            "article article aside";
+    }
+    article {
+        grid-template-areas: 
+            "article-content-1 article-content-2"
+            "article-content-3 article-content-4"
+            "article-content-5 article-content-5";
+    }
+} 
