@@ -9,6 +9,7 @@ main {
     grid-template-areas: 
         "header"
         "section"
+        "aside"
         "footer";
 }
 
@@ -88,71 +89,112 @@ header .header-image p {
 }
 
 section {
+    background: #cacaca;
     display: grid;
     grid-area: section;
     grid-template-areas: 
-    "article"
-    "aside";
+        "article-1"
+        "article-2"
+        "article-3"
+        "article-4"
+        "article-5";
 }
 
-article {
-    display: grid;
-    gap: 10px;
-    border: 3px solid black;
-    background-color: blue;
-    grid-area: article;
-    grid-template-areas: 
-        "article-content-1"
-        "article-content-2"
-        "article-content-3"
-        "article-content-4"
-        "article-content-5";
-} 
+article:not(.article-5) {
+    padding: 0.5rem;
+    background: #fafafa;
+    margin: 0.5rem;
+}
+article .title {
+    background: rosybrown;
+    padding: 0.5rem 0rem 0 0.3rem;
+    text-transform: uppercase;
+    color: white;
+    display: block;
+}
+article .image {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0.2rem
+}
+article .image p {
+    color: yellow;
+    margin: 0;
+    margin-left: 0.2rem;
+    opacity: 0.7;
+}
 
-article span {
-    background-color: cadetblue;
+article.article-1 {
+    grid-area: article-1;
 }
-article span.article-content-1 {
-    grid-area: article-content-1;
+article.article-1 .image {
+    background-image: url('images/sakura.jpg');
 }
-article span.article-content-2 {
-    grid-area: article-content-2;
+
+article.article-2 {
+    grid-area: article-2;
 }
-article span.article-content-3 {
-    grid-area: article-content-3;
+article.article-2 .image {
+    background-image: url('images/comida.jpg');
 }
-article span.article-content-4 {
-    grid-area: article-content-4;
+article.article-3 {
+    grid-area: article-3;
 }
-article span.article-content-5 {
-    grid-area: article-content-5;
+article.article-3 .image {
+    background-image: url('images/fuji.jpg');
+}
+article.article-4 {
+    grid-area: article-4;
+}
+article.article-4 .image {
+    background-image: url('images/noche.jpg');
+}
+article.article-5 {
+    grid-area: article-5;
+    padding: 0.5rem;
+    color: black;
+    text-align: center;
 }
 
 aside {
+    background: #cacaca;
+    color: black;
+    padding: 2rem;
     display: grid;
-    border: 3px solid black;
-    background-color: red;
     grid-area: aside;
     grid-template-areas: 
     "aside-content-1"
     "aside-content-2"
     "."
-}
-
-aside span {
-    background-color: yellow;
+    "."
+    "."
+    "."
+    "."
+    "."
 }
 aside span.aside-content-1 {
     grid-area: aside-content-1;
+    margin: auto;
+    font-weight: bold;
 }
 aside span.aside-content-2 {
     grid-area: aside-content-2;
+    text-align: center;
 }
 
 footer {
-    border: 3px solid black;
-    background-color: yellow;
+    background-color: #cacaca;
     grid-area: footer;
+}
+footer p {
+    margin: 0 0.5rem;
+    background-color: #fafafa;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 768px) and (min-width: 500px) {
@@ -163,32 +205,28 @@ footer {
     }
     section {
         grid-template-areas: 
-            "article"
-            "aside";
-    }
-    article {
-        grid-template-areas: 
-            "article-content-1 article-content-2"
-            "article-content-3 article-content-4"
-            "article-content-5 article-content-5";
+            "article-1 article-2"
+            "article-3 article-4"
+            "article-5 article-5";
     }
 }
 
 @media (min-width: 768px) {
+    main {
+        grid-template-areas: 
+        "header header header header header header header"
+        "section section section section section section aside"
+        "footer footer footer footer footer footer footer";
+    }
+    section {
+        grid-template-areas: 
+            "article-1 article-2"
+            "article-3 article-4"
+            "article-5 article-5";
+    }
     header {
         grid-template-areas: 
             "header-content-logo header-content-1 header-content-2 header-content-3 header-content-4 header-content-5 header-content-6"
             "header-image header-image header-image header-image header-image header-image header-image";
-    }
-
-    section {
-        grid-template-areas: 
-            "article article aside";
-    }
-    article {
-        grid-template-areas: 
-            "article-content-1 article-content-2"
-            "article-content-3 article-content-4"
-            "article-content-5 article-content-5";
     }
 } 
